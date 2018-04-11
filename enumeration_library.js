@@ -8,7 +8,7 @@ EnumerationLibrary.prototype.find = function(callback) {
   // }
   let foundObject;
   this.array.forEach((item) => {
-    if (callback(item)) foundObject = item;
+    if (callback(item) && foundObject === undefined) foundObject = item;
   });
   return foundObject;
 }
